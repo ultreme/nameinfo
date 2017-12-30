@@ -13,5 +13,5 @@ func (_ FrIndien) Generate(firstname, lastname string) string {
 }
 
 func init() {
-	generators = append(generators, FrIndien{})
+	Generators = append(Generators, FrIndien{})
 }

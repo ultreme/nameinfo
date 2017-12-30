@@ -13,5 +13,5 @@ func (_ FrLoup) Generate(firstname, lastname string) string {
 }
 
 func init() {
-	generators = append(generators, FrLoup{})
+	Generators = append(Generators, FrLoup{})
 }
