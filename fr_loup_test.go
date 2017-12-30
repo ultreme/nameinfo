@@ -6,6 +6,6 @@ func ExampleFrLoup() {
 	fmt.Println(FrLoup{}.Name())
 	fmt.Println(FrLoup{}.Generate("Manfred", "Touron"))
 	// output:
-	// loup
+	// nom de loup
 	// feu/flamme lunaire
 }

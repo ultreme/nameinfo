@@ -6,6 +6,6 @@ func ExampleFrIndien() {
 	fmt.Println(FrIndien{}.Name())
 	fmt.Println(FrIndien{}.Generate("Manfred", "Touron"))
 	// output:
-	// indien
+	// nom indien
 	// caribou troublant
 }

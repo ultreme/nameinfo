@@ -4,7 +4,7 @@ import "fmt"
 
 type FrIndien struct{}
 
-func (_ FrIndien) Name() string { return "indien" }
+func (_ FrIndien) Name() string { return "nom indien" }
 func (_ FrIndien) Generate(firstname, lastname string) string {
 	return fmt.Sprintf("%s %s",
 		[]string{"chaton", "aigle", "bison", "blaireau", "cnard", "croco", "dindon", "cheval", "iguane", "renard", "condor", "saumon", "caribou", "grizzly", "aigle", "sanglier", "criquet", "chacal", "crapaud", "castor", "ragondin", "putois", "lama", "vautour", "serpent", "pigeon"}[firstLetterIdx(firstname)],

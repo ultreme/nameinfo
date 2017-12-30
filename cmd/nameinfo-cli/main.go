@@ -11,6 +11,6 @@ func main() {
 	person := nameinfo.FromFullName(os.Args[1])
 	fmt.Printf("%s\n", os.Args[1])
 	for _, generator := range nameinfo.Generators {
-		fmt.Printf("%s: %s\n", generator.Name(), person.Generate(generator))
+		fmt.Printf("ton %s est %q\n", generator.Name(), person.Generate(generator))
 	}
 }
