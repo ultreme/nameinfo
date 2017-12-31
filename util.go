@@ -18,3 +18,7 @@ func removeAccents(input string) string {
 func firstLetterIdx(word string) int {
 	return int(strings.ToLower(removeAccents(word))[0]) - 97
 }
+
+func lastLetterIdx(word string) int {
+	return int(strings.ToLower(removeAccents(word))[len(word)-1]) - 97
+}
