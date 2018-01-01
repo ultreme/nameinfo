@@ -20,5 +20,13 @@ func firstLetterIdx(word string) int {
 }
 
 func lastLetterIdx(word string) int {
-	return int(strings.ToLower(removeAccents(word))[len(word)-1]) - 97
+	return firstLetterIdx(Reverse(word))
+}
+
+func Reverse(s string) string {
+	runes := []rune(s)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+	return string(runes)
 }
