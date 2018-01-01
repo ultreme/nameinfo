@@ -1,16 +1,28 @@
 package main
 
 import (
+	"flag"
 	"fmt"
-	"os"
+	"strings"
 
 	"github.com/camembertaulaitcrew/nameinfo"
 )
 
+var generatorName = flag.String("generator", "", "generator")
+
 func main() {
-	person := nameinfo.FromFullName(os.Args[1])
-	fmt.Printf("%s\n", os.Args[1])
-	for _, generator := range nameinfo.Generators {
-		fmt.Printf("ton %s est %q\n", generator.Name(), person.Generate(generator))
+	flag.Parse()
+	person := nameinfo.FromFullName(strings.Join(flag.Args(), " "))
+	if *generatorName != "" {
+		for _, generator := range nameinfo.Generators {
+			if generator.Name() == *generatorName {
+				fmt.Printf("ton %s est %q\n", generator.Name(), person.Generate(generator))
+			}
+		}
+	} else {
+		fmt.Printf("%s\n", strings.Join(flag.Args(), " "))
+		for _, generator := range nameinfo.Generators {
+			fmt.Printf("ton %s est %q\n", generator.Name(), person.Generate(generator))
+		}
 	}
 }
